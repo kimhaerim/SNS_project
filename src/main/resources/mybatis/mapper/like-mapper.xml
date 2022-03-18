@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.codepresso.team2app.mapper.LikeMapper">
+
+
+    <update id="like_check" parameterType="HashMap">
+        UPDATE likes
+        SET like_check = like_check + 1
+        WHERE user_id = #{user_id} AND article_id = #{article_id}
+    </update>
+
+    <update id="like_check_cancel" parameterType="HashMap">
+        UPDATE likes
+        SET like_check = 0
+        WHERE user_id = #{user_id} AND article_id = #{article_id}
+    </update>
+
+    <insert id="create">
+        insert into likes (like_id)
+        values (#{like_id})
+    </insert>
+
+    <delete id="delete">
+        delete from likes
+        where like_id = #{like_id}
+    </delete>
+
+
+</mapper>

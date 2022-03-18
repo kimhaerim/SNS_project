@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.codepresso.team2app.mapper.PostMapper">
+    <insert id="save">
+        insert into post(title, content, author)
+        values (#{post.title}, #{post.content}, #{post.author});
+    </insert>
+
+    <select id="findAllPost" resultType="com.codepresso.team2app.vo.Post">
+        SELECT * FROM POST;
+    </select>
+</mapper>
